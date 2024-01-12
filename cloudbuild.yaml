@@ -1,9 +1,0 @@
-# build docker image
-steps:
-  - name: 'gcr.io/cloud-builders/docker'
-    args: [ 'build', '-t', 'us-central1-docker.pkg.dev/prj-gradient-omar/python-repo/python-image', '.' ]
-# push docker image
-images:
-  - 'us-central1-docker.pkg.dev/prj-gradient-omar/python-repo/python-image'
-options:
-  logging: CLOUD_LOGGING_ONLY
