@@ -50,3 +50,17 @@ Steps are as follows:
 
 For Continuos integration yaml a load test is included but commented out. A report on the load test for the managed instance group is saved to a Google Cloud Storage bucket for review.
 
+
+# Scaling Instances Based on CPU Utilization
+
+By using apache Jmeter I was able to simulate a load to the application to display Googles autoscaling policy in action. Attaching the Autoscaling policy can be included as part of your build steps and be fined tuned to your desires. For this test I just used Googles default metric which is CPU utilization and thats set when enabling autoscaling on your MIG.
+
+![image](https://github.com/ohakawati/CI-CD_ComputeEngine/assets/107427573/e4508cc1-098f-488b-aa56-4c76f3ae3021)
+
+![image](https://github.com/ohakawati/CI-CD_ComputeEngine/assets/107427573/d4bfb1ef-bcc1-4c38-88eb-5b56772efc3d)
+For this graphic I ended up lowering the target CPU util to 20% instead of 70% because the load wasnt big enough initially. You can see when the threshold is exceeded the MIG scaled out to 8 instances. 
+
+
+
+
+
